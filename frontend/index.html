@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pneumonia AI Detection</title>
+    <meta charset="UTF-8">
+    <title>Pneumonia AI Detection</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Pneumonia Risk Detection System</h1>
-  <p>Hackathon Prototype</p>
+
+<h1>AI-Assisted Pneumonia Detection</h1>
+
+<!-- STEP 1 -->
+<section id="step1">
+    <h2>Step 1: Basic Details</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="number" id="age" placeholder="Age">
+    
+    <select id="gender">
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+
+    <input type="text" id="city" placeholder="City">
+    <input type="text" id="mobile" placeholder="Mobile Number">
+
+    <button onclick="goToStep2()">Next</button>
+</section>
+
+<!-- STEP 2 -->
+<section id="step2" class="hidden">
+    <h2>Step 2: Upload Chest X-Ray</h2>
+
+    <input type="file" id="xray" accept="image/*">
+
+    <button onclick="goToStep3()">Next</button>
+</section>
+
+<!-- STEP 3 -->
+<section id="step3" class="hidden">
+    <h2>Step 3: Symptoms & Tests</h2>
+
+    <label><input type="checkbox" id="fever"> Fever</label>
+    <label><input type="checkbox" id="cough"> Cough</label>
+    <label><input type="checkbox" id="breath"> Shortness of Breath</label>
+    <label><input type="checkbox" id="fatigue"> Fatigue</label>
+
+    <h3>Flash-Tissue Oxygen Test</h3>
+    <button onclick="startFlashTest()">Start Flash Test</button>
+
+    <h3>IMU Breathing Test</h3>
+    <button onclick="startIMUTest()">Start Breathing Test</button>
+
+    <button onclick="submitAll()">Submit</button>
+</section>
+
+<div id="result"></div>
+
+<script src="app.js"></script>
 </body>
 </html>

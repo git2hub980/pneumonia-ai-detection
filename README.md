@@ -40,3 +40,10 @@ based on severity, city, and hospital load.
 - Backend: Python (Flask)
 - AI Model: ResNet-50
 - APIs: AQI, Location, Activity Sensors
+
+  
+## How to Run (Prototype)
+1. Clone the repository
+2. Install Python dependencies
+3. Run backend using Flask
+4. Open frontend/index.html in browser

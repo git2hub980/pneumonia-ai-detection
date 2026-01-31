@@ -1,19 +1,42 @@
-# AI-Assisted Pneumonia Detection
+# AI-Assisted Pneumonia Detection & Risk Stratification System
 
-This project is developed for a hackathon under HealthTech / Medical Imaging.
+## Problem Statement
+Early detection of pneumonia is difficult in rural and urban India due to
+lack of specialists, delayed diagnosis, and limited access to hospitals.
+This project provides an AI-powered, multi-stage pneumonia detection
+and triage system using X-ray analysis, environmental data, symptom assessment,
+and smartphone-based physiological sensing.
 
-## Features
-- Chest X-ray analysis using ResNet-50
-- Symptom-based risk scoring
-- Oxygen saturation estimation (PPG)
-- IMU-based breathing analysis
-- Patient risk flagging (Red / Yellow / Green)
+## Project Workflow (3 Stages)
 
-## Project Structure
-frontend/ - Website UI  
-backend/ - Risk engine & API logic  
-ml/ - Model training and prediction  
+### Stage 1: Patient Details & X-ray Upload
+- Basic details (Name, Age, Gender, City, Address)
+- Chest X-ray upload
+- ResNet-50 based image classification
 
-## Note
-Backend and ML modules are included for local execution.
-Frontend can be hosted using GitHub Pages.
+### Stage 2: Intelligent Questionnaire
+- City-based AQI & pollution risk
+- Smoking / alcohol habits
+- Pneumonia symptoms
+- Medical history
+- Rural / Urban adaptive questions
+
+### Stage 3: Smartphone-Based Severity Tests
+- Flash-Tissue Oxygen Mapping (PPG)
+- IMU-based Breathing & Heart Analysis
+- Activity Crash Detection (Step Data)
+
+## Risk Classification
+- 🔴 High Risk (Immediate Doctor Allocation)
+- 🟡 Mild Risk (Scheduled Appointment)
+- 🟢 Normal (Home Care & Optional Consultation)
+
+## Doctor & Hospital Allocation
+Patients are automatically routed to nearby lung specialists
+based on severity, city, and hospital load.
+
+## Tech Stack
+- Frontend: HTML, CSS, JavaScript
+- Backend: Python (Flask)
+- AI Model: ResNet-50
+- APIs: AQI, Location, Activity Sensors
